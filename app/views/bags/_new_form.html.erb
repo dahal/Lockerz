@@ -1,0 +1,13 @@
+<h1>New Reservation</h1>
+<%= form_for @bag do |f| %>
+  <%= f.label "Customer Name" %>
+  <%= f.text_field :customer_name %><br>
+
+  <%= fields_for @locker do |f| %>
+    <%= f.label "Locker Type" %>
+    <%= f.select :size, locker_size,
+             :prompt => 'Select One' %><br>
+  <% end %>
+
+  <%= f.submit "Submit", disable_with: 'Submiting...' %>
+<% end %>
