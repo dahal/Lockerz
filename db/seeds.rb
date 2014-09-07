@@ -1,7 +1,14 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+# Create 1000 small lockers
+for i in 1..1000
+  Locker.create(name: "S#{i}", size: "Small")
+end
+
+# Create 1000 small lockers
+for i in 1..1000
+  Locker.create(name: "M#{i}", size: "Medium")
+end
+
+# Create 1000 small lockers
+for i in 1..1000
+  Locker.create(name: "L#{i}", size: "Large")
+end
