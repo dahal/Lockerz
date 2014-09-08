@@ -9,4 +9,9 @@ class Locker < ActiveRecord::Base
   on: :create
 
   has_one :bag
+
+  def self.search(search)
+    where(name: search).first
+  end
+
 end

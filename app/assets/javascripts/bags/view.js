@@ -10,10 +10,8 @@ Lockerz.Bags.View.prototype = {
   },
 
   printReceipt: function(info){
-    debugger
     $('.checkin-name').append(info.name)
     $('.checkin-locker').append(info.locker)
     $('.receipt').show()
-    // console.log('what')
   }
 }
