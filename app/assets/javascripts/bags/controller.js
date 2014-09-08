@@ -25,5 +25,4 @@ Lockerz.Bags.Controller.prototype = {
       this.view.printReceipt(checkin)
     }.bind(this))
   }
-
 }
