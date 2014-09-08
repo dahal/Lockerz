@@ -1,27 +1,48 @@
-<%= render partial: 'new_form' %>
 
-<div class="receipt">
-  <h2>Vegas Hotel</h2>
-  <h4>Receipt</h4>
-  Name: <span class='checkin-name'></span><br>
-  Locker#: <span class='checkin-locker'></span>
-  <h5>Thank you for your business</h5>
-</div>
+<div class="container">
 
-<h3>Search by locker number</h3>
-<div class="search">
-  <%= form_tag bags_path, :method => 'get' do %>
-    <p>
-      <%= text_field_tag :search, params[:search] %>
-      <%= submit_tag "Search", :name => nil, :id=> 'search-button' %>
-    </p>
-  <% end %>
-</div>
+  <div class="col-md-6">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Check in</h3>
+      </div>
+      <div class="panel-body">
+        <%= render partial: 'new_form' %>
+        <div class="receipt">
+          <h4>Vegas Hotel</h4>
+          <h5>Receipt</h5>
+          Name: <span class='checkin-name'></span><br>
+          Locker#: <span class='checkin-locker'></span>
+          <h5>Thank you for your business</h5>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<div class="search-results">
-  <% if @search_locker %>
-  <span>Thanks for stopping by Mr/Ms. </span>
-    <%= @search_bag.customer_name %>, your bag is on 
-    <%= @search_locker.name %> locker. <br>
-  <% end %>
+  <div class="col-md-6">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Check Our</h3>
+      </div>
+      <div class="panel-body">
+        <h3>Search by locker number</h3>
+          <%= form_tag bags_path, :method => 'get' do %>
+          <p>
+            <%= text_field_tag :search, params[:search] , :class => 'form-control' %>
+            <%= submit_tag "Search", :name => nil, :id=> 'search-button', :class => 'btn btn-md btn-primary pull-right' %>
+          </p>
+          <% end %>
+        </div>
+
+        <div class="search-results">
+          <% if @search_locker %>
+          <span>Thanks for stopping by Mr/Ms. </span>
+          <%= @search_bag.customer_name %>, your bag is on 
+          <%= @search_locker.name %> locker. <br>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
